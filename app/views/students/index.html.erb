@@ -1,0 +1,38 @@
+<nav class="navbar navbar-inverse " style="background:#ffefd5">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand text-info">Student Information</a>
+    </div>
+    <div class="col-xl-10">
+    <ul class="nav navbar-nav navbar-right">
+      <%# <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> %>
+      <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+    </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-3">
+<h3>Students</h3>
+<table class="table">
+<thead>
+      <tr>
+        <th>Name</th>
+        <th>E-Mail</th>
+        <th>Department</th>
+        
+      </tr>
+    </thead>
+    <tbody> 
+<% @students.each do |student| %>
+        <tr>
+        <td><%= student.first_name %></td>
+        <td> <%= student.email %></td>
+        <td><%= student.department %></td>
+        </td>
+        <td><%= link_to 'Edit', edit_student_path(student.id) %></td>
+        </tr>
+<% end %>
+</tbody>
+</table> 
+</div>

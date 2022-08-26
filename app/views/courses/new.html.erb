@@ -1,0 +1,41 @@
+
+<section class="h-100 h-custom">
+  <div class="container py-3 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+     <h3 class="px-3 text-info "> Adding Courses</h3>
+    <div class="col-lg-2 col-xl-2">
+   
+        <body>
+          <%# <%= form_with scope: :products, url: products_path, local: true do |form| %>
+          <%= form_with model: @course do |form|%>
+          
+                <div class="form-group p-2">
+                        <%= form.label :name %>
+                        <%= form.text_field :name %><br>
+                </div>
+                <div class="form-group p-2">
+                        <%= form.label :description %>
+                        <%= form.text_field :description %> <br>
+                </div>
+                <div class="form-group p-2">
+                        <%= form.label :fee %><br>
+                        <%= form.text_field :fee %>
+                </div>
+                
+                <div class="form-group p-2">
+                        <%= form.label :starting_date %><br>
+                        <%= form.date_select :starting_date %>
+                </div>
+                <div class="form-group p-2">
+                        <%= form.label :ending_date %><br>
+                        <%= form.date_select :ending_date %>
+                </div>
+                <div class="form-group p-2"> 
+                        <%=  submit_tag("Save") %>
+                </div>
+          <% end %>
+        </body>
+      </div>
+    </div>
+  </div>
+</section>
